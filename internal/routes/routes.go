@@ -15,10 +15,10 @@ func InitializeRoutes() *mux.Router {
 	return r
 }
 
-func homeHandler(w http.ResponseWriter, r *http.Request) {
+func homeHandler(w http.ResponseWriter) {
 	w.Write([]byte("Welcome to the Home Page!"))
 }
 
-func aboutHandler(w http.ResponseWriter, r *http.Request) {
+func aboutHandler(w http.ResponseWriter) {
 	w.Write([]byte("This is the About Page."))
 }
