@@ -18,7 +18,3 @@ func InitializeRoutes() *mux.Router {
 func homeHandler(w http.ResponseWriter) {
 	w.Write([]byte("Welcome to the Home Page!"))
 }
-
-func aboutHandler(w http.ResponseWriter) {
-	w.Write([]byte("This is the About Page."))
-}
