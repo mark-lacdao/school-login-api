@@ -14,7 +14,3 @@ func InitializeRoutes() *mux.Router {
 	r.NotFoundHandler = http.HandlerFunc(handlers.NotFoundHandler)
 	return r
 }
-
-func homeHandler(w http.ResponseWriter) {
-	w.Write([]byte("Welcome to the Home Page!"))
-}
