@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"net/http"
-	"school/pkg/utils"
+	"school-login-api/pkg/utils"
 )
 
 // HomeHandler handles the home page request
