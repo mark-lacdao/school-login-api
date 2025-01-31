@@ -2,15 +2,17 @@ package routes
 
 import (
 	"net/http"
-	"school/internal/handlers"
+	"school-login-api/internal/handlers"
 
 	"github.com/gorilla/mux"
+	"github.com/jackc/pgx/v4/pgxpool"
 )
 
-// InitializeRoutes initializes the routes for the application
-func InitializeRoutes() *mux.Router {
+func InitializeRoutes(db *pgxpool.Pool) *mux.Router {
 	r := mux.NewRouter()
-	r.HandleFunc("/", handlers.HomeHandler).Methods("GET")
-	r.NotFoundHandler = http.HandlerFunc(handlers.NotFoundHandler)
+	r.HandleFunc("/login", handlers.LoginHandler(db)).Methods("POST")
+	r.NotFoundHandler = http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		http.Error(w, "Page not found", http.StatusNotFound)
+	})
 	return r
 }
