@@ -1,3 +1,3 @@
 # 
 
-A school management app.
+A login API for the school application.
